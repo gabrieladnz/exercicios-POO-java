@@ -1,0 +1,96 @@
+// ESTUDO DE POO - JAVA
+
+/* 1) DEFININDO A CLASSE:
+* - local onde conceituamos o objeto
+* - define os atributos e métodos */
+
+public class Automovel {
+
+/* 2) DEFININDO ATRIBUTOS (variáveis): 
+* <modificador_de_acesso><tipo_de_dado><nome_atributo> = <valor inicial>; */
+
+String marca; // ou private String marca;
+String cor;
+Int velocidade = 0;
+
+/* 3) DEFININDO MÉTODOS:
+* - parâmetro pode ser vazio
+* - se não houver retorno deve ser VOID, se houver o tipo deve ser informado: int, float, string, boolean.
+* <modificador_de_acesso><tipo_de_dado><nome_método>(<lista_de_parâmetros>) {
+<operacoes>
+}  */
+
+void buzinar() {
+    System.out.println("Beeeeeep");
+ }
+
+void acelerar() {
+    velocidade = velocidade + 1;
+}
+
+void desacelerar() {
+    velocidade = velocidade - 1;
+}
+
+/* 4) INSTANCIANDO OBJETOS:
+ * - criar uma nova classe para testar a construída
+ * - usar o método main
+ */
+
+public class TestarAutomovel {
+    public static void main(String [] args) {
+
+        // precisamos declarar uma variável qualquer como sendo do tipo da classe criada:
+        Automovel meuCarro;
+        // depois atribuímos à variável criada o resultado obtido pelo instanciador new mais o método construtor
+        // que é o nome da nossa classe seguido de parênteses
+        meuCarro = new Automovel();
+        
+// 5) Acessando elementos(atributos/métodos) dos objetos: <nome_do_objeto>.<elemento>
+        meuCarro.buzinar();
+        
+        // para acessar um atributo:
+        System.out.println("A velocidade é: " + velocidade);
+        
+        // para alterar os valores dos atributos:
+        meuCarro.marca = "Ford";
+        meuCarro.velocidade = 10;
+        
+        // os métodos acelerar e reduzir da classe Automovel, alteram o valor da variável velocidade
+        meuCarro.acelerar();
+    }
+}
+
+// 6) RETORNO DE MÉTODOS:
+<tipo_de_retorno> <nome_do_método> (<lista_de_parâmetros>){
+<operações>
+return <valor_de_retorno>;
+}
+}
+
+7) CONSTRUTORES:
+
+É possível criar mais de um construtor em uma mesma classe, entretanto, eles devem possuir assinaturas diferentes(quantidade ou tipos de parâmetros diferentes)
+
+public class ContaCorrente{ 
+double saldo; 
+
+//Exemplo de construtor da classe 
+ContaCorrente() { 
+/* implementação */ 
+} 
+void sacar(double valor){
+ saldo = saldo – valor; 
+} 
+}
+
+8) PALAVRA RESERVADA: this
+
+this pode ser usado para diferenciar um atributo do objeto de um
+parâmetro do método:
+
+ContaCorrente(float saldo) {
+this.saldo = saldo;
+}
+
+9)ENCAPSULAMENTO
